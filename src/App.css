@@ -1,0 +1,93 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+body{
+  background-color: rgb(35, 39, 65);
+}
+
+#main-container{
+  border-radius: 10px;
+  padding: 100px 0 100px 0;
+  width: 800px;
+  background: repeating-linear-gradient(
+  -55deg,
+  rgb(174, 255, 98),
+  rgb(174, 255, 98) 60px,
+  rgb(66, 153, 44) 60px,
+  rgb(66, 153, 44) 120px
+  );
+  margin: 100px auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}
+
+#menu-text-container{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#menu-button-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+h1,p{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: white;
+  text-shadow: 6px 6px black;
+}
+
+h1{
+  font-size: 80px;
+  font-weight: 700;
+}
+
+p{
+  text-shadow: 2px 2px black;
+  font-size: 20px;
+}
+
+button{
+  padding: 10px;
+  font-size: 38px;
+  background-color: rgb(129, 63, 36);
+  color: rgb(230, 190, 105);
+  border: 5px solid rgb(230, 190, 105);
+  border-radius: 5px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5) ;
+  cursor: pointer;
+}
+
+/* NEW CSS */
+#maze-game-container{
+  margin: auto;
+  background-color: white;
+  width: max-content;
+}
+
+#maze-grid-container{
+  display: inline-grid;
+  grid-template-columns: repeat(8, 0fr);
+}
+
+.maze-tile{
+  width: 60px;
+  height: 60px;
+}
+
+.maze-path{
+  background-color: rgb(116, 207, 30);
+}
+
+.maze-wall{
+  background-color: rgb(29, 100, 2);
+}
