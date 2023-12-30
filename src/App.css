@@ -1,77 +1,142 @@
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik+Bubbles&display=swap');
 
 *{
   margin: 0;
   box-sizing: border-box;
   padding: 0;
-  font-family: 'VT323', monospace;
+  font-family: 'Press Start 2P';
+}
+#root{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: max-content;
+  height: 100vh;
+}
+
+html{
+  /* background-color: rgb(235, 255, 223);
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(169, 214, 151, 0.5) 35px, rgba(169, 214, 151, 0.5) 70px); */
+  background-color: rgb(119, 150, 69);
 }
 
 body{
-  background-color: rgb(35, 39, 65);
-}
-#app-body{
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
   text-align: center;
-  width: max-content;
-  margin: 100px auto 0 auto;
 }
 
-h1, h4, h5{
-  color: white;
+#app-body{
+  max-width: max-content;
+  max-height: max-content;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, p{
+  color: rgb(0, 0, 0);
+  margin-bottom: 1vw;
 }
 
 h1{
-  font-size: 5rem;
+  font-family: 'Rubik Bubbles';
+  font-size: 5vw;
+  color: rgb(56, 107, 26);
+  text-shadow: 5px 5px rgba(0, 0, 0, 1);
+}
+h2{
+  font-size: 4vw;
+}
+h3{
+  font-size: 3vw;
 }
 h4{
-  font-size: 3rem;
+  font-size: 2vw;
 }
 h5{
-  font-size: 2rem;
+  font-size: 1vw;
+}
+p{
+  font-size: 1.5vw;
+  line-height: 3rem;
 }
 
 #menu-container {
-  margin-top: 60px;
+  margin:auto;
   display: flex;
   flex-direction: column;
   gap: 30px;
+  justify-content: center;
+  align-items: center;
 }
 
 #maze-game-container{
-  margin-top: 60px;
+  margin: auto;
   width: max-content;
   display: flex;
   flex-direction: column;
   justify-content:space-between;
   text-align: center;
-  gap: 50px;
+  gap: 4vh;
 }
 
 #maze-grid-container{
   display: inline-grid;
   grid-template-columns: repeat(8, 0fr);
+  background-color: rgb(211, 170, 81);
 }
 
+#player{
+  background-color: blue;
+  width: 100%;
+  height: 100%;
+}
+#goal{
+  position: absolute;
+  display: flex;
+  background-color: red;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+#how-to-container{
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  width: -moz-fit-content;
+}
+ul{
+  text-align: left;
+  width: max-content;
+}
+li{
+  list-style-type: none;
+  margin-bottom: 2vw;
+  font-size: 2vw;
+}
 .maze-tile{
-  width: 60px;
-  height: 60px;
   position: relative;
 }
 
 .maze-path{
-  background-color: rgb(116, 207, 30);
+  background-color: rgba(207, 159, 55, 0);
 }
 
 .maze-wall{
-  background-color: rgb(29, 100, 2);
+  background-color: rgb(56, 107, 26);
+  /* box-shadow: 1vh 1vh rgba(0, 0, 0, 0.333); */
 }
 
 button{
   padding: 10px;
-  font-size: 38px;
+  font-size: 2vw;
   background-color: rgb(129, 63, 36);
   color: rgb(230, 190, 105);
   border: 5px solid rgb(230, 190, 105);
@@ -80,4 +145,118 @@ button{
   cursor: pointer;
   width: max-content;
   margin: auto;
+}
+
+#game-window-buttons{
+  display: flex;
+}
+
+table{
+  margin: auto;
+  display: none;
+}
+
+#desktop-ins{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+#mobile-ins{
+  display: none;
+}
+
+#about-me{
+  display: flex;
+  flex-direction: column;
+  gap: 5vw;
+}
+
+
+@media only screen and (orientation:landscape) and (max-height: 1024px)and (hover: none) and (pointer: coarse){
+  #mobile-ins{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5vh;
+  }
+  #desktop-ins{
+    display: none;
+  }
+  table{
+    display:inline-block;
+  }
+
+  #maze-game-container{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content:space-between;
+  }
+  #game-window-buttons{
+    flex-direction: column;
+  }
+
+  #mobile-controls button{
+    width: 9.5vw;
+    height: 9.5vw;
+    font-size: 1.5vw;
+    padding: 0;
+  }
+}
+
+@media only screen and (orientation:portrait)and (hover: none) and (pointer: coarse){
+  #mobile-ins{
+    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+  }
+  #desktop-ins{
+    display: none;
+  }
+  #maze-game-container{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+  }
+  #game-window-buttons{
+    flex-direction: row;
+    gap: 2vh;
+  }
+  table{
+    display: inline-block;
+    margin: auto;
+  }
+
+  button{
+    font-size: 2vh;
+  }
+
+  #mobile-controls button{
+    width: 6vh;
+    height: 6vh;
+    font-size: 0.75vh;
+    padding: 0;
+  }
+  h1{
+    font-size: 4vh;
+  }
+  h3{
+    font-size: 2.5vh;
+  }
+  h4{
+    font-size: 2vh;
+  }
+  h5{
+    font-size: 2vh;
+  }
+  p{
+    font-size: 1.5vh;
+  }
+
+  .maze-wall{
+    /* box-shadow: 1vh 1vh rgba(0, 0, 0, 0.333); */
+  }
 }

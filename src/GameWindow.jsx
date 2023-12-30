@@ -1,29 +1,24 @@
 import { createContext, useState } from "react";
 import MazeMainComponent from "./Mazemain";
 import MenuWindow from "./MenuComponent";
+import HowToPlayComponent from "./HowTo";
+import AboutMeComponent from "./About";
+import VictoryWindow from "./Victory";
 
 export const GameWindowContext = createContext()
 const GameWindow = () => {
-    const [gaming, setGaming] = useState("menu")
-    const gameWindow = (stat) => {
-        setGaming(stat);
+    const [appWindow, setAppWindow] = useState("menu")
+    const updateWindow = (stat) => {
+        setAppWindow(stat);
     }
     return(
-        <GameWindowContext.Provider value={[gaming,gameWindow]}>
+        <GameWindowContext.Provider value={[appWindow,updateWindow]}>
             <div id="app-body">
-                <h1>Hedge Maze Game</h1>
-                <h4>Made with React JS</h4>
-                <h5>by Francis O.</h5>
-                {gaming==="menu"?(
-                <MenuWindow/>
-                ): gaming==="game"?(
-                <MazeMainComponent/>
-                ):(
-                    <div>
-                        <h4>Work in progress!</h4>
-                        <button onClick={()=>gameWindow("menu")}>Back</button>
-                    </div>
-                )}
+                {appWindow==="menu"?<MenuWindow/>:null}
+                {appWindow==="game"?<MazeMainComponent/>:null}
+                {appWindow==="how"?<HowToPlayComponent/>:null}
+                {appWindow==="about"?<AboutMeComponent/>:null}
+                {appWindow==="victory"?<VictoryWindow/>:null}
             </div>
         </GameWindowContext.Provider>
 

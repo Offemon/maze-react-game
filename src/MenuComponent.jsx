@@ -3,19 +3,19 @@ import { GameWindowContext } from "./GameWindow";
 
 
 const MenuWindow = () => {
-const [gaming, gamewindow] = useContext(GameWindowContext);
+const [appWindow, updateWindow] = useContext(GameWindowContext);
 
-const handleStartBtn = () => {
-    gamewindow("game")
+const handleMenuBtn = (state) => {
+    updateWindow(state)
 }
 
-const handleHow2Play = () => {
-    gamewindow("how")
-}
+
     return (
         <div id="menu-container">
-            <button onClick={()=>handleStartBtn()}>Start Game</button>
-            <button onClick={()=>handleHow2Play()}>How to play?</button>
+            <h1>Hedgerunner</h1>
+            <button onClick={()=>handleMenuBtn("game")}>Start Game</button>
+            <button onClick={()=>handleMenuBtn("how")}>How to Play</button>
+            <button onClick={()=>handleMenuBtn("about")}>About me</button>
         </div>
     );
 }
