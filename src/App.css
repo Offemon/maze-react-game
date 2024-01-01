@@ -55,7 +55,7 @@ h3{
   font-size: 3vw;
 }
 h4{
-  font-size: 2vw;
+  font-size: 2.25vw;
 }
 h5{
   font-size: 1vw;
@@ -111,6 +111,7 @@ p{
   flex-direction: column;
   width: fit-content;
   width: -moz-fit-content;
+  gap: 5vh;
 }
 ul{
   text-align: left;
@@ -162,6 +163,14 @@ table{
   justify-content: center;
   text-align: center;
   align-items: center;
+  gap: 5vh;
+}
+
+span.chosen-one{
+  font-family: 'Rubik Bubbles';
+  font-size: 6vh;
+  color: rgb(56, 107, 26);
+  text-shadow: 5px 5px rgba(0, 0, 0, 1);
 }
 
 #mobile-ins{
@@ -171,7 +180,7 @@ table{
 #about-me{
   display: flex;
   flex-direction: column;
-  gap: 5vw;
+  gap: 1vh;
 }
 
 
@@ -180,8 +189,23 @@ table{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 3vh;
+  }
+
+  #mobile-ins > div{
+    width: fit-content;
+    width: -moz-fit-content;
+    height: fit-content;
+    height: -moz-fit-content;
+    margin: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     gap: 5vh;
   }
+
   #desktop-ins{
     display: none;
   }
@@ -199,11 +223,12 @@ table{
   }
 
   #mobile-controls button{
-    width: 9.5vw;
-    height: 9.5vw;
-    font-size: 1.5vw;
+    width: 7vw;
+    height: 7vw;
+    font-size: 1vw;
     padding: 0;
   }
+
 }
 
 @media only screen and (orientation:portrait)and (hover: none) and (pointer: coarse){
@@ -213,6 +238,21 @@ table{
     flex-direction: column;
     gap: 5vh;
   }
+
+  #mobile-ins > div{
+    width: fit-content;
+    width: -moz-fit-content;
+    height: fit-content;
+    height: -moz-fit-content;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 5vh;
+  }
+
   #desktop-ins{
     display: none;
   }
@@ -237,7 +277,7 @@ table{
   #mobile-controls button{
     width: 6vh;
     height: 6vh;
-    font-size: 0.75vh;
+    font-size: 0.8vh;
     padding: 0;
   }
   h1{

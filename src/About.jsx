@@ -15,8 +15,9 @@ const AboutMeComponent = () => {
                 <h4>UI/UX Designer:</h4>
                 <p>Francis O.</p>
             </div>
-            <p>Yes... I'm terrible at designing</p>
-
+            <div>
+                <p>Created with Vite + React</p>
+            </div>
             <button onClick={()=>updateWindow("menu")}>Back</button>
         </div>
     );
